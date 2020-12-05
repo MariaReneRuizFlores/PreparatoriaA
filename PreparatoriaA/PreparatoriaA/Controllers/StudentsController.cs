@@ -17,12 +17,14 @@ namespace PreparatoriaA.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Students
+        [Authorize]
         public IQueryable<Student> GetStudents()
         {
             return db.Students;
         }
 
         // GET: api/Students/5
+        [Authorize]
         [ResponseType(typeof(Student))]
         public IHttpActionResult GetStudent(int id)
         {
@@ -36,6 +38,7 @@ namespace PreparatoriaA.Controllers
         }
 
         // PUT: api/Students/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutStudent(int id, Student student)
         {
@@ -71,6 +74,7 @@ namespace PreparatoriaA.Controllers
         }
 
         // POST: api/Students
+        [Authorize]
         [ResponseType(typeof(Student))]
         public IHttpActionResult PostStudent(Student student)
         {
@@ -86,6 +90,7 @@ namespace PreparatoriaA.Controllers
         }
 
         // DELETE: api/Students/5
+        [Authorize]
         [ResponseType(typeof(Student))]
         public IHttpActionResult DeleteStudent(int id)
         {
